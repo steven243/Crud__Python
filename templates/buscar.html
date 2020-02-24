@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartParking | Buscar Carro</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock %}
+
+</head>
+<body>
+
+
+	<img id="logoStreet" src="static/sources/LogoStreetAI-01.png" height="75px">
+
+	<center>
+		<div class="mainContent2">
+			<p class="title">Vehículos Registrados</p><br>
+
+			<table class="table col-lg-8">
+			  <thead class="thead-light">
+			    <tr>
+			      <th scope="col">Placa</th>
+			      <th scope="col">Marca</th>
+			      <th scope="col">Modelo</th>
+			      <th scope="col">Color</th>
+			      <th scope="col">Propietario</th>
+			      <th scope="col">Cédula</th>
+			      <th scope="col">Casa</th>
+			      <th scope="col">Acción</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+                 
+                 {% for res in response %}
+                 <tr>
+                     {% if res['estado'] == true %}
+    			      <td>{{res['placa']}}</td>
+    			      <td>{{res['marca']}}</td>
+    			      <td>{{res['modelo']}}</td>
+    			      <td>{{res['color']}}</td>
+          			  <td>{{res['nombre'] + " " + res['apellido']}}</td>
+    			      <td>{{res['cedula']}}</td>
+    			      <td>{{res['casa']}}</td>
+    			      <td>
+    			      	<button type="submit" class="btn btn-primary" onclick="location.href='/update/{{res['placa']}}'">Editar</button>
+    			      	<button type="submit" class="btn btn-danger" onclick="location.href='/delete/{{res['placa']}}'">Borrar</button>
+    			      </td>
+    			      {% endif %}
+			       </tr>
+			      {% endfor %}
+			     
+			  </tbody>
+			</table>
+			
+
+			<button class="buscar2" onclick="location.href='/home'">< Cancelar</button>
+			<button class="buscar2" onclick="location.href='/registro'">Registrar Nuevo ></button>
+
+
+		</div>
+	</center>
+	<footer>
+		<center>
+			<p class="footer">Powered By: Street.ai</p>
+		</center>
+	</footer>
+
+</body>
+</html>

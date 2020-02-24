@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartParking | Registro Carro</title>
+	<meta charset="utf-8">
+	{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+    {% endblock %}
+
+
+</head>
+<body>
+
+	<img id="logoStreet" src="static/sources/LogoStreetAI-01.png" height="75px">
+
+	<center>
+		<div class="mainContent">
+			<p class="title">Agregar un Nuevo Vehículo</p>
+			<div id="form">
+				<form action="/create">
+					
+					<label id="vehiculo">VEHÍCULO:</label><br>
+					<input type="text" name="marca" placeholder="Marca" required>
+					<input type="text" name="modelo" placeholder="Modelo" required><br>
+					<input type="text" name="color" placeholder="Color" required>
+					<input type="text" name="placa" placeholder="Placa" required><br><br>
+
+					<label>PROPIETARIO:</label><br>
+					<input type="text" name="nombre" placeholder="Nombre" required>
+					<input type="text" name="apellido" placeholder="Apellido" required><br>
+					<input type="number" name="cedula" placeholder="Cédula" required>
+					<input type="text" name="casa" placeholder="Casa" required><br><br><br>
+					<button class="registro" onclick="location.href='/home'">< Regresar</button>
+					<button class="registro" type="submit">Registrar ></button><br><br>
+				</form>
+			</div>
+		</div>
+	</center>
+
+
+	<footer>
+		<center>
+			<p class="footer" style="margin-top: 48px;">Powered By: Street.ai</p>
+		</center>
+	</footer>
+</body>
+</html>
+

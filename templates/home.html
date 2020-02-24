@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartParking</title>
+	{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body>
+
+
+	<img id="logoStreet" src="static/sources/LogoStreetAI-01.png" height="75px">
+
+    <center>
+        <div class="container">
+            <div class="left">
+                <form action="/registro">
+                    <button class="btnEnlaceHome" >Agregar Vehículo</button>
+                </form>
+                <br>
+                <br>
+                <br>
+                <br>
+                <form action="/buscar">
+                    <button class="btnEnlaceHome" onclick="location.href='buscarcarro.html'">Buscar Vehículo</button>
+                </form>
+            </div>
+
+
+            <div class="right" >
+                <img class="mancha" src="static/sources/Mancha-05.png" style="max-width: 660px; max-height: 660px">
+            </div>    
+        </div>
+    </center>
+
+</body>
+</html>

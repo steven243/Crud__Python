@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartParking | Actualizar Carro</title>
+	<meta charset="utf-8">
+	{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+    {% endblock %}
+
+
+</head>
+<body>
+
+	<img id="logoStreet" src="/static/sources/LogoStreetAI-01.png" height="75px">
+
+	<center>
+		<div class="mainContent" style="margin-top: 5px;">
+			<p class="title">Actualizar Información del Vehículo: {{placa}}</p>
+			<div id="form">
+				<form action="/update/{{placa}}/upt">
+					
+					<label id="vehiculo">VEHÍCULO:</label><br>
+					<input type="text" name="placa" value="{{placa}}" readonly>
+					<input type="text" name="color" placeholder="Color" required><br><br>
+					
+
+					<label>PROPIETARIO:</label><br>
+					<input type="text" name="nombre" placeholder="Nombre" required>
+					<input type="text" name="apellido" placeholder="Apellido" required><br>
+					<input type="number" name="cedula" placeholder="Cédula" required>
+					<input type="text" name="casa" placeholder="Casa" required><br><br><br>
+					<button class="registro" onclick="location.href='/buscar'">< Regresar</button>
+					<button class="registro" type="submit">Actualizar ></button><br><br>
+				</form>
+			</div>
+		</div>
+	</center>
+
+
+	<footer>
+		<center>
+			<p class="footer" style="margin-top: 48px;">Powered By: Street.ai</p>
+		</center>
+	</footer>
+</body>
+</html>
+

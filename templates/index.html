@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>SmartParking</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	{% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+    {% endblock %}
+	
+</head>
+<body>
+
+
+	<img id="logoStreet" src="static/sources/LogoStreetAI-01.png" height="75px">
+
+	<center>
+		<div class="indexMainContent" >
+            <img src="static/sources/Main-01.png" style="max-width: 600px; max-height: 600px">
+        </div>
+        <br>
+        <br>
+        <div>
+            <form action="/home">
+                <button class="btnEnlace" onclick="location.href='home.html'">Comenzar ></button>
+            </form>
+        </div>
+	</center>
+
+
+	<footer>
+		<center>
+			<p class="footer">Powered By: Street.ai</p>
+		</center>
+	</footer>
+
+</body>
+</html>

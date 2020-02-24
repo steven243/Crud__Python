@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartParking | Éxito</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block styles %}
+    <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock %}
+
+</head>
+<body>
+
+
+	<img id="logoStreet" src="static/sources/LogoStreetAI-01.png" height="75px">
+
+	<center>
+		<div class="mainContent2">
+			<p class="title" style="font-size: 60px;">¡Felicidades!</p>
+			<p class="title" style="font-size: 25px;">Se ha registrado exitosamente el vehículo con placas: </p>
+			<p class="title" style="font-size: 20px;">{{placa}}</p>
+			<p class="title" style="font-size: 13px;">Lorem ipsum dolor sit amet consectetur adipiscing elit morbi duis et vel mus, 
+			torquent <br> tristique conubia praesent risus natoque consequat nullam molestie congue.</p>
+			<button class="buscar2" onclick="location.href='/home'">< Regresar</button>
+			<button class="buscar2" onclick="location.href='/registro'">Registrar Nuevo ></button>
+		</div>
+	</center>
+
+
+	<footer>
+		<center>
+			<p class="footer">Powered By: Street.ai</p>
+		</center>
+	</footer>
+
+</body>
+</html>
